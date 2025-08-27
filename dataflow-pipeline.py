@@ -10,8 +10,8 @@ def run():
     options = PipelineOptions(
         project='healthcare-analytics-sugith',
         runner='DataflowRunner',
-        region='us-central1',
-        zone='us-central1-a',
+        region='asia-south1-a',
+        zone='asia-south1-a',
         temp_location='gs://healthcare-raw-data-healthcare-analytics-sugith/temp /'
     )
   
