@@ -11,6 +11,7 @@ def run():
         project='healthcare-analytics-sugith',
         runner='DataflowRunner',
         region='us-central1',
+        zone='us-central1-a',
         temp_location='gs://healthcare-raw-data-healthcare-analytics-sugith/temp /'
     )
   
