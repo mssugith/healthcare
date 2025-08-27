@@ -16,7 +16,7 @@ def run():
   
     with beam.Pipeline(options=options) as p:
         (p
-         | 'ReadFromGCS' >> beam.io.ReadFromText('gs://healthcare-raw-data-healthcare-analytics-sugith/Hdataset/heart_disease_risk_dataset_earlymed.csv')
+         | 'ReadFromGCS' >> beam.io.ReadFromText('gs://healthcare-raw-data-healthcare-analytics-sugith/Hdataset/heart_disease_risk_dataset_earlymed2.csv')
          | 'ParseCSV' >> beam.Map(lambda line: line.split(','))
          | 'ProcessData' >> beam.ParDo(ProcessHealthcareData())
          | 'WriteToBigQuery' >> beam.io.WriteToBigQuery(
