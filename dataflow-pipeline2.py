@@ -26,7 +26,7 @@ def run():
         runner="DataflowRunner",   # For local test, use DirectRunner
         project="healthcare-analytics-sugith",
         region="asia-south1-a",
-        temp_location="gs://healthcare-raw-data-healthcare-analytics-sugith/temp /",
+        temp_location="gs://healthcare-processed-data-healthcare-analytics-sugith/temp /",
         staging_location="gs://healthcare-raw-data-healthcare-analytics-sugith/staging/",
     )
 
