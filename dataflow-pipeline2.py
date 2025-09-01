@@ -37,7 +37,7 @@ def run():
             p
             | "Read from GCS" >> beam.io.ReadFromText(options.input , coder=beam.coders.BytesCoder())
             | "DecodeSafely" >> beam.Map(lambda x: x.decode("utf-8", errors="ignore"))
-            | "Transform" >> beam.Map(transform_data)
+           # | "Transform" >> beam.Map(transform_data)
             | "Write to BigQuery" >> beam.io.WriteToBigQuery(
                 table=options.output,
                 schema='Chest_Pain: STRING, Shortness_of_Breath: STRING,  Age: INT, Heart_Risk: STRING ',
