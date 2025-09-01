@@ -23,7 +23,7 @@ def transform_data(element):
 def run():
     pipeline_options = PipelineOptions(
         save_main_session=True,
-        runner="DataflowRunner",   # For local test, use DirectRunner
+        runner="DirectRunner",   # For local test, use DirectRunner
         project="healthcare-analytics-sugith",
         region="asia-south1-a",
         temp_location="gs://healthcare-processed-data-healthcare-analytics-sugith/temp /",
