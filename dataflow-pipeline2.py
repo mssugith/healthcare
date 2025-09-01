@@ -35,7 +35,8 @@ def run():
     with beam.Pipeline(options=pipeline_options) as p:
         (
             p
-            | "Read from GCS" >> beam.io.ReadFromText(options.input, skip_header_lines=1)
+            | "Read from GCS" >> beam.io.ReadFromText(options.input , coder=beam.coders.BytesCoder())
+            | "DecodeSafely" >> beam.Map(lambda x: x.decode("utf-8", errors="ignore"))
             | "Transform" >> beam.Map(transform_data)
             | "Write to BigQuery" >> beam.io.WriteToBigQuery(
                 table=options.output,
