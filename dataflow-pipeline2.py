@@ -15,7 +15,7 @@ def transform_data(element):
     return {
         "chest_pain": fields[0],
         "Shortness_of_Breath": fields[1],
-        "Age": INT64(fields[17]),
+        "Age": INT(fields[17]),
       	"Heart_Risk": fields[18]
     }
 
@@ -40,7 +40,7 @@ def run():
            # | "Transform" >> beam.Map(transform_data)
             | "Write to BigQuery" >> beam.io.WriteToBigQuery(
                 table=options.output,
-                schema='Chest_Pain: INT64, Shortness_of_Breath: INT64,  Age: INT64, Heart_Risk: INT64 ',
+                schema='Chest_Pain: INT, Shortness_of_Breath: INT,  Age: INT, Heart_Risk: INT ',
                 write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
                 create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
             )
