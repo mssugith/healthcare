@@ -15,7 +15,7 @@ def transform_data(element):
     return {
         "chest_pain": fields[0],
         "Shortness_of_Breath": fields[1],
-        "Age": INT(fields[17]),
+        "Age": fields[17],
       	"Heart_Risk": fields[18]
     }
 
