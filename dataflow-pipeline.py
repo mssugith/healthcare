@@ -25,7 +25,7 @@ def run():
         runner="DataflowRunner",  # local test
         project="healthcare-analytics-sugith",
         region="asia-south1",   # region not zone
-        worker_zone="asia-south1-a"
+        worker_zone="asia-south1-a",
         temp_location="gs://healthcare-processed-data-healthcare-analytics-sugith/temp/",
         staging_location="gs://healthcare-processed-data-healthcare-analytics-sugith/staging/",
     )
