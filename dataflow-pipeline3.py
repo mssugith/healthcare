@@ -14,8 +14,8 @@ def transform_data(element):
     return {
         "Chest_Pain": fields[0],
         "Shortness_of_Breath": fields[1],
-        "Age": int(fields[17]) if fields[17].isdigit() else None,
-        "Heart_Risk": fields[18],
+        "Age": int(fields[2]) if fields[2].isdigit() else None,
+        "Heart_Risk": fields[3],
     }
 
 
