@@ -24,7 +24,7 @@ def run():
         save_main_session=True,
         runner="DataflowRunner",  # local test
         project="healthcare-analytics-sugith",
-        region="us",   # region not zone
+        region="us-central1",   # region not zone
         temp_location="gs://healthcare-raw-data-healthcare-analytics-sugith/temp/",
         staging_location="gs://healthcare-raw-data-healthcare-analytics-sugith/staging/"
     )
