@@ -3,7 +3,7 @@ import csv, io, json, os, math, time, uuid
 from google.cloud import storage, pubsub_v1
 import requests
 
-PROJECT = os.environ['healthcare-analytics-sugith']
+PROJECT = os.environ.get('healthcare-analytics-sugith', 'default_project_name')
 PUBSUB_TOPIC = os.environ.get('PUBSUB_TOPIC', 'projects/{}/topics/tracking-batches'.format(PROJECT))
 CSV_GCS_PATH = os.environ['gs://fertility-analyze/raw/fertility.csv']  # e.g. gs://my-bucket/tracking_ids.csv
 SAMPLE_SIZE = int(os.environ.get('SAMPLE_SIZE', '10'))
@@ -88,3 +88,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
